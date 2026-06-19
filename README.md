@@ -21,12 +21,12 @@ The project was developed within the IT-technology higher education program at *
 
 The system is engineered around the Raspberry Pi Pico 2 W. To overcome the microcontroller's GPIO and ADC pin limitations, I²C expanders are utilized to offload standard I/O:
 
-* **Brain:** Raspberry Pi Pico 2 W
+* **MCU:** Raspberry Pi Pico 2 W
 * **I/O Expander (Keyboard):** PCF8575 via I²C (handles the 13 tactical buttons)
 * **ADC Amplifier (Potentiometers):** ADS1115 via I²C (normalizes ADSR inputs)
 * **DAC & Amplifier:** MAX98357A via I2S (converts and amplifies digital audio to an analog signal)
 * **Display:** ILI9225 via SPI
-* **Input:** Rotary encoder (waveform selection) and 4x 10kΩ potentiometers
+* **Input:** Rotary encoder (waveform selection), 4x 10kΩ potentiometers, 13x tactile switches
 
 ### Block Diagram
 <img width="1075" height="263" alt="image" src="https://github.com/user-attachments/assets/b1d51726-aef4-49b8-b59c-faa62ce43bfc" />
@@ -52,26 +52,27 @@ Because MicroPython runs significantly slower than native C/C++, the codebase em
 * `C_GUI.py`: Renders menus, active waves, and ADSR metric bars on the ILI9225 display.
 * `D_QuadEncoder.py`: Decodes inputs from the rotary encoder.
 
+### Flowchart
+<img width="240" height="717" alt="image" src="https://github.com/user-attachments/assets/43e8e1f9-b943-4caf-b790-7a34c852fe82" />
+
 ---
-
-## Installation and Usage
-
-### Prerequisites
-* A Raspberry Pi Pico 2 W development board.
-* PCF8575
-* ADS1115
-* ILI9225
-* An IDE supporting MicroPython development (e.g., **Thonny IDE** or VS Code with the MicroPython extension).
-* Necessary driver libraries uploaded:
-  * `D_PCF8575.py`
-  * `D_ADS1115.py`
-  * `D_ILI9225.py`
 
 ### Pictures of the prototype
 <img width="955" height="536" alt="image" src="https://github.com/user-attachments/assets/7cf45410-c631-4a2c-b2e4-1c98406e1621" />
+
+3D-printet box for Pico, Pico-breakout-board (PCB), display, battery and rotary encoder:
+
+<img width="654" height="614" alt="image" src="https://github.com/user-attachments/assets/e133fb9e-2531-4704-9e3a-11d92d12fc27" />
+<img width="361" height="435" alt="image" src="https://github.com/user-attachments/assets/8361f7c2-4574-478f-bcff-a1c111bfe34c" />
+
+Keyboard:
+
 <img width="834" height="523" alt="image" src="https://github.com/user-attachments/assets/b95437aa-ae1b-4d3a-b4db-ce49c77ca00a" />
 <img width="831" height="529" alt="image" src="https://github.com/user-attachments/assets/5807940a-766e-44ba-bc19-7ca84ba7ca07" />
 <img width="833" height="535" alt="image" src="https://github.com/user-attachments/assets/c581edaa-807a-4099-9ae2-be70f80fbfb7" />
+
+ADSR-envelope:
+
 <img width="680" height="414" alt="image" src="https://github.com/user-attachments/assets/7d796e4e-9ca6-4c43-a20b-e732b94c8295" />
 <img width="680" height="409" alt="image" src="https://github.com/user-attachments/assets/53faba12-7bfe-4c40-8bf9-46214a8e019e" />
 <img width="680" height="390" alt="image" src="https://github.com/user-attachments/assets/9a51ea8c-234b-4811-94ac-55c72be177cb" />
