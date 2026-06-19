@@ -29,7 +29,7 @@ The system is engineered around the Raspberry Pi Pico 2 W. To overcome the micro
 * **Input:** Rotary encoder (waveform selection) and 4x 10kΩ potentiometers
 
 ### Block Diagram
-<img width="1004" height="258" alt="image" src="https://github.com/user-attachments/assets/1501fe86-755b-4e7c-9020-8c0541988cdc" />
+<img width="1075" height="263" alt="image" src="https://github.com/user-attachments/assets/b1d51726-aef4-49b8-b59c-faa62ce43bfc" />
 
 ### Electrical Diagram
 <img width="1004" height="949" alt="image" src="https://github.com/user-attachments/assets/f96562c0-ab23-48de-8522-a79ff963355d" />
